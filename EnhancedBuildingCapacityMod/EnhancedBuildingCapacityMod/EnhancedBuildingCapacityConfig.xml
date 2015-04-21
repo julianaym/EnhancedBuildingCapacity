@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://github.com/julianaym/EnhancedBuildingCapacity">
+  <Version>1.0</Version>
+  <Residential_LowDensity>
+    <Level rank="1">
+      <Capacity>20</Capacity>
+      <ElectricityConsumption>50</ElectricityConsumption>
+      <WaterConsumption>80</WaterConsumption>
+      <SewageAccumulation>80</SewageAccumulation>
+      <GarbageAccumulation>50</GarbageAccumulation>
+      <IncomeAccumulation>120</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>25</Capacity>
+      <ElectricityConsumption>55</ElectricityConsumption>
+      <WaterConsumption>75</WaterConsumption>
+      <SewageAccumulation>75</SewageAccumulation>
+      <GarbageAccumulation>45</GarbageAccumulation>
+      <IncomeAccumulation>140</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>25</Capacity>
+      <ElectricityConsumption>60</ElectricityConsumption>
+      <WaterConsumption>70</WaterConsumption>
+      <SewageAccumulation>70</SewageAccumulation>
+      <GarbageAccumulation>40</GarbageAccumulation>
+      <IncomeAccumulation>180</IncomeAccumulation>
+    </Level>
+    <Level rank="4">
+      <Capacity>20</Capacity>
+      <ElectricityConsumption>60</ElectricityConsumption>
+      <WaterConsumption>65</WaterConsumption>
+      <SewageAccumulation>65</SewageAccumulation>
+      <GarbageAccumulation>35</GarbageAccumulation>
+      <IncomeAccumulation>240</IncomeAccumulation>
+    </Level>
+    <Level rank="5">
+      <Capacity>15</Capacity>
+      <ElectricityConsumption>70</ElectricityConsumption>
+      <WaterConsumption>60</WaterConsumption>
+      <SewageAccumulation>60</SewageAccumulation>
+      <GarbageAccumulation>30</GarbageAccumulation>
+      <IncomeAccumulation>360</IncomeAccumulation>
+    </Level>
+  </Residential_LowDensity>
+  <Residential_HighDensity>
+    <Level rank="1">
+      <Capacity>120</Capacity>
+      <ElectricityConsumption>30</ElectricityConsumption>
+      <WaterConsumption>60</WaterConsumption>
+      <SewageAccumulation>60</SewageAccumulation>
+      <GarbageAccumulation>40</GarbageAccumulation>
+      <IncomeAccumulation>80</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>200</Capacity>
+      <ElectricityConsumption>32</ElectricityConsumption>
+      <WaterConsumption>55</WaterConsumption>
+      <SewageAccumulation>55</SewageAccumulation>
+      <GarbageAccumulation>35</GarbageAccumulation>
+      <IncomeAccumulation>100</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>300</Capacity>
+      <ElectricityConsumption>34</ElectricityConsumption>
+      <WaterConsumption>50</WaterConsumption>
+      <SewageAccumulation>50</SewageAccumulation>
+      <GarbageAccumulation>30</GarbageAccumulation>
+      <IncomeAccumulation>120</IncomeAccumulation>
+    </Level>
+    <Level rank="4">
+      <Capacity>500</Capacity>
+      <ElectricityConsumption>36</ElectricityConsumption>
+      <WaterConsumption>50</WaterConsumption>
+      <SewageAccumulation>45</SewageAccumulation>
+      <GarbageAccumulation>25</GarbageAccumulation>
+      <IncomeAccumulation>140</IncomeAccumulation>
+    </Level>
+    <Level rank="5">
+      <Capacity>640</Capacity>
+      <ElectricityConsumption>38</ElectricityConsumption>
+      <WaterConsumption>40</WaterConsumption>
+      <SewageAccumulation>40</SewageAccumulation>
+      <GarbageAccumulation>20</GarbageAccumulation>
+      <IncomeAccumulation>180</IncomeAccumulation>
+    </Level>
+  </Residential_HighDensity>
+  <Commercial_LowDensity>
+    <Level rank="1">
+      <Capacity>50</Capacity>
+      <ElectricityConsumption>50</ElectricityConsumption>
+      <WaterConsumption>60</WaterConsumption>
+      <SewageAccumulation>60</SewageAccumulation>
+      <GarbageAccumulation>100</GarbageAccumulation>
+      <IncomeAccumulation>520</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>75</Capacity>
+      <ElectricityConsumption>60</ElectricityConsumption>
+      <WaterConsumption>80</WaterConsumption>
+      <SewageAccumulation>80</SewageAccumulation>
+      <GarbageAccumulation>50</GarbageAccumulation>
+      <IncomeAccumulation>800</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>120</Capacity>
+      <ElectricityConsumption>70</ElectricityConsumption>
+      <WaterConsumption>100</WaterConsumption>
+      <SewageAccumulation>100</SewageAccumulation>
+      <GarbageAccumulation>25</GarbageAccumulation>
+      <IncomeAccumulation>1120</IncomeAccumulation>
+    </Level>
+  </Commercial_LowDensity>
+  <Commercial_HighDensity>
+    <Level rank="1">
+      <Capacity>120</Capacity>
+      <ElectricityConsumption>30</ElectricityConsumption>
+      <WaterConsumption>70</WaterConsumption>
+      <SewageAccumulation>70</SewageAccumulation>
+      <GarbageAccumulation>50</GarbageAccumulation>
+      <IncomeAccumulation>280</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>250</Capacity>
+      <ElectricityConsumption>30</ElectricityConsumption>
+      <WaterConsumption>60</WaterConsumption>
+      <SewageAccumulation>60</SewageAccumulation>
+      <GarbageAccumulation>50</GarbageAccumulation>
+      <IncomeAccumulation>560</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>500</Capacity>
+      <ElectricityConsumption>30</ElectricityConsumption>
+      <WaterConsumption>50</WaterConsumption>
+      <SewageAccumulation>50</SewageAccumulation>
+      <GarbageAccumulation>25</GarbageAccumulation>
+      <IncomeAccumulation>800</IncomeAccumulation>
+    </Level>
+  </Commercial_HighDensity>
+  <Industrial_Generic>
+    <Level rank="1">
+      <Capacity>100</Capacity>
+      <ElectricityConsumption>150</ElectricityConsumption>
+      <WaterConsumption>100</WaterConsumption>
+      <SewageAccumulation>100</SewageAccumulation>
+      <GarbageAccumulation>200</GarbageAccumulation>
+      <IncomeAccumulation>160</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>200</Capacity>
+      <ElectricityConsumption>200</ElectricityConsumption>
+      <WaterConsumption>130</WaterConsumption>
+      <SewageAccumulation>130</SewageAccumulation>
+      <GarbageAccumulation>150</GarbageAccumulation>
+      <IncomeAccumulation>240</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>300</Capacity>
+      <ElectricityConsumption>250</ElectricityConsumption>
+      <WaterConsumption>160</WaterConsumption>
+      <SewageAccumulation>160</SewageAccumulation>
+      <GarbageAccumulation>100</GarbageAccumulation>
+      <IncomeAccumulation>300</IncomeAccumulation>
+    </Level>
+  </Industrial_Generic>
+  <Industrial_Forestry>
+    <Level rank="1">
+      <Capacity>50</Capacity>
+      <ElectricityConsumption>90</ElectricityConsumption>
+      <WaterConsumption>60</WaterConsumption>
+      <SewageAccumulation>60</SewageAccumulation>
+      <GarbageAccumulation>100</GarbageAccumulation>
+      <IncomeAccumulation>140</IncomeAccumulation>
+    </Level>
+  </Industrial_Forestry>
+  <Industrial_Farming>
+    <Level rank="1">
+      <Capacity>25</Capacity>
+      <ElectricityConsumption>110</ElectricityConsumption>
+      <WaterConsumption>350</WaterConsumption>
+      <SewageAccumulation>350</SewageAccumulation>
+      <GarbageAccumulation>150</GarbageAccumulation>
+      <IncomeAccumulation>180</IncomeAccumulation>
+    </Level>
+  </Industrial_Farming>
+  <Industrial_Oil>
+    <Level rank="1">
+      <Capacity>150</Capacity>
+      <ElectricityConsumption>350</ElectricityConsumption>
+      <WaterConsumption>200</WaterConsumption>
+      <SewageAccumulation>200</SewageAccumulation>
+      <GarbageAccumulation>200</GarbageAccumulation>
+      <IncomeAccumulation>360</IncomeAccumulation>
+    </Level>
+  </Industrial_Oil>
+  <Industrial_Ore>
+    <Level rank="1">
+      <Capacity>150</Capacity>
+      <ElectricityConsumption>300</ElectricityConsumption>
+      <WaterConsumption>250</WaterConsumption>
+      <SewageAccumulation>250</SewageAccumulation>
+      <GarbageAccumulation>150</GarbageAccumulation>
+      <IncomeAccumulation>300</IncomeAccumulation>
+    </Level>
+  </Industrial_Ore>
+  <Office>
+    <Level rank="1">
+      <Capacity>200</Capacity>
+      <ElectricityConsumption>80</ElectricityConsumption>
+      <WaterConsumption>90</WaterConsumption>
+      <SewageAccumulation>90</SewageAccumulation>
+      <GarbageAccumulation>100</GarbageAccumulation>
+      <IncomeAccumulation>140</IncomeAccumulation>
+    </Level>
+    <Level rank="2">
+      <Capacity>550</Capacity>
+      <ElectricityConsumption>100</ElectricityConsumption>
+      <WaterConsumption>100</WaterConsumption>
+      <SewageAccumulation>100</SewageAccumulation>
+      <GarbageAccumulation>75</GarbageAccumulation>
+      <IncomeAccumulation>160</IncomeAccumulation>
+    </Level>
+    <Level rank="3">
+      <Capacity>1200</Capacity>
+      <ElectricityConsumption>120</ElectricityConsumption>
+      <WaterConsumption>110</WaterConsumption>
+      <SewageAccumulation>110</SewageAccumulation>
+      <GarbageAccumulation>50</GarbageAccumulation>
+      <IncomeAccumulation>180</IncomeAccumulation>
+    </Level>
+  </Office>
+</Configuration>
