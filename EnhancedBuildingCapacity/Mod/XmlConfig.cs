@@ -1,4 +1,5 @@
 ﻿using ColossalFramework.IO;
+using System;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -9,9 +10,10 @@ namespace EnhancedBuildingCapacity.Mod
     /// </summary>
     public static class XmlConfig
     {
-        public static Configuration config = new Configuration();
+        public static Configuration config = new Configuration(true);
 
-        private static XmlSerializer xmlSerializer = new XmlSerializer(typeof(Configuration));
+        private static Type[] extraTypes = {typeof(Configuration.EducationalServices), typeof(Configuration.Building), typeof(Configuration.Building.Level)};
+        private static XmlSerializer xmlSerializer = new XmlSerializer(typeof(Configuration), extraTypes);
         private static string path = Path.Combine(DataLocation.applicationBase, "EnhancedBuildingCapacityConfig.xml");
 
         static XmlConfig()
@@ -23,7 +25,7 @@ namespace EnhancedBuildingCapacity.Mod
         /// <summary>
         /// Serializes the configurations from the mods config file
         /// </summary>
-        /// <returns>Returns true if the xml serialization was successful and false if not</returns>
+        /// <returns>True if the xml serialization was successful and false otherwise</returns>
         public static bool Save()
         {
             using (TextWriter textWriter = new StreamWriter(path))
@@ -31,28 +33,29 @@ namespace EnhancedBuildingCapacity.Mod
                 try
                 {
                     xmlSerializer.Serialize(textWriter, config);
-                    return true;
                 }
                 catch
                 {
                     Debug.PrintError("An error occured while saving: " + path);
                     return false;
                 }
-            }               
+            }
+            return true;
         }
 
         /// <summary>
         /// Deserializes the configurations from the mods config file
         /// </summary>
-        /// <returns>Returns true if xml deserialization was successful</returns>
+        /// <returns>True if the xml deserialization was successful and false otherwise</returns>
         public static bool Load()
         {
+            bool CombineDidSelfRepair = false;
+
             using (TextReader reader = new StreamReader(path))
             {
                 try
                 {
-                    config = (Configuration)xmlSerializer.Deserialize(reader);
-                    return true;
+                    CombineDidSelfRepair = config.Combine((Configuration)xmlSerializer.Deserialize(reader));
                 }
                 catch
                 {
@@ -60,12 +63,17 @@ namespace EnhancedBuildingCapacity.Mod
                     return false;
                 }
             }
+
+            if (CombineDidSelfRepair)
+                Save();
+
+            return true;
         }
 
         /// <summary>
         /// Ensures that the game does not crash, when there are errors in the config file
         /// </summary>
-        public static void Initialize()
+        public static void SafeLoad()
         {
             if(!Load())
             {
@@ -74,7 +82,7 @@ namespace EnhancedBuildingCapacity.Mod
                 File.Move(path, backupPath);
                 Debug.PrintWarning("Backup file created: " + backupPath + " and new file with default values created!");
 
-                config = new Configuration(); // Thanks Garbage Collector! :)
+                config = new Configuration(true); // Thanks Garbage Collector! :)
                 Save();
             }
         }

@@ -65,13 +65,20 @@
     <Compile Include="Mod\Configuration.cs" />
     <Compile Include="Mod\MyCommercialBuildingAI.cs" />
     <Compile Include="Mod\MyIndustrialBuildingAI.cs" />
+    <Compile Include="Mod\MyIndustrialExtractorAI.cs" />
     <Compile Include="Mod\MyOfficeBuildingAI.cs" />
     <Compile Include="Mod\MyResidentialBuildingAI.cs" />
+    <Compile Include="Mod\MySchoolAI.cs" />
     <Compile Include="Mod\Patch.cs" />
     <Compile Include="Mod\XmlConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\EnhancedBuildingCapacity"
+del "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\EnhancedBuildingCapacity\$(TargetFileName)"
+xcopy /y "$(TargetPath)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\EnhancedBuildingCapacity"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

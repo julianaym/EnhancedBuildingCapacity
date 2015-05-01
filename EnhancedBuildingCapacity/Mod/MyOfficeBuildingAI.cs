@@ -10,10 +10,9 @@ namespace EnhancedBuildingCapacity.Mod
             ItemClass itemClass = this.m_info.m_class;
             int num1;
 
-            #region modified code
             if (itemClass.m_level == ItemClass.Level.Level1)
             {
-                num1 = XmlConfig.config.Office[Configuration.Building.Levels.Level1].Capacity;
+                num1 = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].Capacity;
                 level0 = 0;
                 level1 = 40;
                 level2 = 50;
@@ -21,7 +20,7 @@ namespace EnhancedBuildingCapacity.Mod
             }
             else if (itemClass.m_level == ItemClass.Level.Level2)
             {
-                num1 = XmlConfig.config.Office[Configuration.Building.Levels.Level2].Capacity;
+                num1 = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].Capacity;
                 level0 = 0;
                 level1 = 20;
                 level2 = 50;
@@ -29,13 +28,12 @@ namespace EnhancedBuildingCapacity.Mod
             }
             else
             {
-                num1 = XmlConfig.config.Office[Configuration.Building.Levels.Level3].Capacity;
+                num1 = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].Capacity;
                 level0 = 0;
                 level1 = 0;
                 level2 = 40;
                 level3 = 60;
             }
-            #endregion
 
             if (num1 == 0)
                 return;
@@ -70,32 +68,30 @@ namespace EnhancedBuildingCapacity.Mod
             garbageAccumulation = 0;
             incomeAccumulation = 0;
 
-            #region modified code
             switch (itemClass.m_level)
             {
                 case ItemClass.Level.Level1:
-                    electricityConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level1].ElectricityConsumption;
-                    waterConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level1].WaterConsumption;
-                    sewageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level1].SewageAccumulation;
-                    garbageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level1].GarbageAccumulation;
-                    incomeAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level1].IncomeAccumulation;
+                    electricityConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].ElectricityConsumption;
+                    waterConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].WaterConsumption;
+                    sewageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].SewageAccumulation;
+                    garbageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].GarbageAccumulation;
+                    incomeAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level1].IncomeAccumulation;
                     break;
                 case ItemClass.Level.Level2:
-                    electricityConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level2].ElectricityConsumption;
-                    waterConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level2].WaterConsumption;
-                    sewageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level2].SewageAccumulation;
-                    garbageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level2].GarbageAccumulation;
-                    incomeAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level2].IncomeAccumulation;
+                    electricityConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].ElectricityConsumption;
+                    waterConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].WaterConsumption;
+                    sewageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].SewageAccumulation;
+                    garbageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].GarbageAccumulation;
+                    incomeAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level2].IncomeAccumulation;
                     break;
                 case ItemClass.Level.Level3:
-                    electricityConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level3].ElectricityConsumption;
-                    waterConsumption = XmlConfig.config.Office[Configuration.Building.Levels.Level3].WaterConsumption;
-                    sewageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level3].SewageAccumulation;
-                    garbageAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level3].GarbageAccumulation;
-                    incomeAccumulation = XmlConfig.config.Office[Configuration.Building.Levels.Level3].IncomeAccumulation;
+                    electricityConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].ElectricityConsumption;
+                    waterConsumption = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].WaterConsumption;
+                    sewageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].SewageAccumulation;
+                    garbageAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].GarbageAccumulation;
+                    incomeAccumulation = (int)XmlConfig.config.Office[Configuration.Building.Levels.Level3].IncomeAccumulation;
                     break;
             }
-            #endregion
 
             if (electricityConsumption != 0)
                 electricityConsumption = Mathf.Max(100, productionRate * electricityConsumption + r.Int32(100U)) / 100;

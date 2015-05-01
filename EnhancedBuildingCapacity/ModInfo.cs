@@ -10,7 +10,7 @@ namespace EnhancedBuildingCapacity
         }
         public string Description
         {
-            get { return "A fully customizable building capacity enhancement mod"; }
+            get { return "A fully customizable building AI enhancement mod"; }
         }
     }
 }
