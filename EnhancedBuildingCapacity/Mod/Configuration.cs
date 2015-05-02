@@ -46,7 +46,7 @@ namespace EnhancedBuildingCapacity.Mod
             Residential_HighDensity[Building.Levels.Level2] = new Building.Level(100, 28, 55, 55, 70, 100);
             Residential_HighDensity[Building.Levels.Level3] = new Building.Level(130, 26, 50, 50, 40, 130);
             Residential_HighDensity[Building.Levels.Level4] = new Building.Level(150, 24, 45, 45, 30, 160);
-            Residential_HighDensity[Building.Levels.Level5] = new Building.Level(160, 20, 30, 40, 50, 60);
+            Residential_HighDensity[Building.Levels.Level5] = new Building.Level(160, 22, 40, 40, 20, 200);
 
             Commercial_LowDensity[Building.Levels.Level1] = new Building.Level(50, 50, 60, 60, 100, 520);
             Commercial_LowDensity[Building.Levels.Level2] = new Building.Level(75, 60, 80, 80, 50, 800);
