@@ -160,19 +160,27 @@ namespace EnhancedBuildingCapacity.Mod
                 DidSelfRepair = true;
             }
 
-            this.Schools.OverrideSchoolCapacity = secondaryConfig.Schools.OverrideSchoolCapacity ??
-                this.Schools.OverrideSchoolCapacity;
-            if (secondaryConfig.Schools.OverrideSchoolCapacity == null)
-                DidSelfRepair = true;
+            try
+            {
+                this.Schools.OverrideSchoolCapacity = secondaryConfig.Schools.OverrideSchoolCapacity ?? this.Schools.OverrideSchoolCapacity;
 
-            this.Schools.ElementarySchoolCapacity = secondaryConfig.Schools.ElementarySchoolCapacity ?? this.Schools.ElementarySchoolCapacity;
-            this.Schools.HighSchoolCapacity = secondaryConfig.Schools.HighSchoolCapacity ?? this.Schools.HighSchoolCapacity;
-            this.Schools.UniversityCapacity = secondaryConfig.Schools.UniversityCapacity ?? this.Schools.UniversityCapacity;
+                if (secondaryConfig.Schools.OverrideSchoolCapacity == null)
+                    DidSelfRepair = true;
 
-            if (secondaryConfig.Schools.ElementarySchoolCapacity == null ||
-                secondaryConfig.Schools.HighSchoolCapacity == null ||
-                secondaryConfig.Schools.UniversityCapacity == null)
+                this.Schools.ElementarySchoolCapacity = secondaryConfig.Schools.ElementarySchoolCapacity ?? this.Schools.ElementarySchoolCapacity;
+                this.Schools.HighSchoolCapacity = secondaryConfig.Schools.HighSchoolCapacity ?? this.Schools.HighSchoolCapacity;
+                this.Schools.UniversityCapacity = secondaryConfig.Schools.UniversityCapacity ?? this.Schools.UniversityCapacity;
+
+                if (secondaryConfig.Schools.ElementarySchoolCapacity == null ||
+                    secondaryConfig.Schools.HighSchoolCapacity == null ||
+                    secondaryConfig.Schools.UniversityCapacity == null)
+                    DidSelfRepair = true;
+            }
+            catch
+            {
+                // This will only occur when the block is missing in the xml
                 DidSelfRepair = true;
+            }
 
             Dictionary<Building, Building> buildings = new Dictionary<Building, Building>();
             buildings.Add(this.Residential_LowDensity, secondaryConfig.Residential_LowDensity);
