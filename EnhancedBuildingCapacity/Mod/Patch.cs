@@ -32,11 +32,6 @@ namespace EnhancedBuildingCapacity.Mod
                         newAiType = typeof(MyIndustrialExtractorAI);
                     else if (currentAiType == typeof(OfficeBuildingAI) || currentAiType == typeof(MyOfficeBuildingAI))
                         newAiType = typeof(MyOfficeBuildingAI);
-                    else if ((bool)XmlConfig.config.Schools.OverrideSchoolCapacity)
-                    {
-                        if (currentAiType == typeof(SchoolAI) || currentAiType == typeof(MySchoolAI))
-                            newAiType = typeof(MySchoolAI);
-                    }
 
                     if (newAiType != null)
                     {

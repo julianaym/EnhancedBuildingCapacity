@@ -68,7 +68,7 @@
     <Compile Include="Mod\MyIndustrialExtractorAI.cs" />
     <Compile Include="Mod\MyOfficeBuildingAI.cs" />
     <Compile Include="Mod\MyResidentialBuildingAI.cs" />
-    <Compile Include="Mod\MySchoolAI.cs" />
+    <Compile Include="Mod\MySchoolOverride.cs" />
     <Compile Include="Mod\Patch.cs" />
     <Compile Include="Mod\XmlConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

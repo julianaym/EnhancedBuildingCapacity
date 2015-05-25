@@ -23,9 +23,9 @@ namespace EnhancedBuildingCapacity
         }
         
         /// <summary>
-        /// Reads the embedded mod version from the mod's dll
+        /// Returns the mod version
         /// </summary>
-        /// <returns>The assembly version of the mod's dll</returns>
+        /// <returns>The version of the mod</returns>
         public static string GetVersion()
         {
             return typeof(ModInfo).Assembly.GetName().Version.Major.ToString() + "." + typeof(ModInfo).Assembly.GetName().Version.Minor.ToString();
