@@ -6,6 +6,7 @@ namespace EnhancedBuildingCapacity.Mod
     {
         private static int prefabCount;
         private static BuildingInfo prefab;
+        private static BuildingAI component;
 
         public static void PatchEveryBuildingAI()
         {
@@ -14,32 +15,35 @@ namespace EnhancedBuildingCapacity.Mod
             for (int i = 0; i < prefabCount; ++i)
             {
                 prefab = PrefabCollection<BuildingInfo>.GetPrefab((uint)i);
-
-                BuildingAI component = prefab.GetComponent<BuildingAI>();
-
-                if (prefab != null && component != null)
+                
+                if (prefab != null)
                 {
-                    Type currentAiType = component.GetType();
-                    Type newAiType = null;
+                    component = prefab.GetComponent<BuildingAI>();
 
-                    if (currentAiType == typeof(ResidentialBuildingAI) || currentAiType == typeof(MyResidentialBuildingAI))
-                        newAiType = typeof(MyResidentialBuildingAI);
-                    else if (currentAiType == typeof(CommercialBuildingAI) || currentAiType == typeof(MyCommercialBuildingAI))
-                        newAiType = typeof(MyCommercialBuildingAI);
-                    else if (currentAiType == typeof(IndustrialBuildingAI) || currentAiType == typeof(MyIndustrialBuildingAI))
-                        newAiType = typeof(MyIndustrialBuildingAI);
-                    else if (currentAiType == typeof(IndustrialExtractorAI) || currentAiType == typeof(MyIndustrialExtractorAI))
-                        newAiType = typeof(MyIndustrialExtractorAI);
-                    else if (currentAiType == typeof(OfficeBuildingAI) || currentAiType == typeof(MyOfficeBuildingAI))
-                        newAiType = typeof(MyOfficeBuildingAI);
-
-                    if (newAiType != null)
+                    if (component != null)
                     {
-                        BuildingAI buildingAI = (BuildingAI)prefab.gameObject.AddComponent(newAiType);
+                        Type currentAiType = component.GetType();
+                        Type newAiType = null;
 
-                        buildingAI.m_info = prefab;
-                        prefab.m_buildingAI = buildingAI;
-                        buildingAI.InitializePrefab();
+                        if (currentAiType == typeof(ResidentialBuildingAI) || currentAiType == typeof(MyResidentialBuildingAI))
+                            newAiType = typeof(MyResidentialBuildingAI);
+                        else if (currentAiType == typeof(CommercialBuildingAI) || currentAiType == typeof(MyCommercialBuildingAI))
+                            newAiType = typeof(MyCommercialBuildingAI);
+                        else if (currentAiType == typeof(IndustrialBuildingAI) || currentAiType == typeof(MyIndustrialBuildingAI))
+                            newAiType = typeof(MyIndustrialBuildingAI);
+                        else if (currentAiType == typeof(IndustrialExtractorAI) || currentAiType == typeof(MyIndustrialExtractorAI))
+                            newAiType = typeof(MyIndustrialExtractorAI);
+                        else if (currentAiType == typeof(OfficeBuildingAI) || currentAiType == typeof(MyOfficeBuildingAI))
+                            newAiType = typeof(MyOfficeBuildingAI);
+
+                        if (newAiType != null)
+                        {
+                            BuildingAI buildingAI = (BuildingAI)prefab.gameObject.AddComponent(newAiType);
+
+                            buildingAI.m_info = prefab;
+                            prefab.m_buildingAI = buildingAI;
+                            buildingAI.InitializePrefab();
+                        }
                     }
                 }
             }

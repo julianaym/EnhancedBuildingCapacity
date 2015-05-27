@@ -24,23 +24,26 @@ namespace EnhancedBuildingCapacity.Mod
                 {
                     prefab = PrefabCollection<BuildingInfo>.GetPrefab((uint)i);
 
-                    component = prefab.GetComponent<BuildingAI>();
-
-                    if (prefab != null && component.GetType() == typeof(SchoolAI))
+                    if (prefab != null)
                     {
-                        try
+                        component = prefab.GetComponent<BuildingAI>();
+
+                        if (component != null && component.GetType() == typeof(SchoolAI))
                         {
-                            schoolLevel = (ItemClass.Level)typeof(ItemClass).GetField("m_level").GetValue(component.m_info.m_class);
-                            if (schoolLevel == ItemClass.Level.Level1)
-                                typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.ElementarySchoolCapacity);
-                            else if (schoolLevel == ItemClass.Level.Level2)
-                                typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.HighSchoolCapacity);
-                            else
-                                typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.UniversityCapacity);
-                        }
-                        catch
-                        {
-                            Debug.PrintWarning("Could not set m_studentCount");
+                            try
+                            {
+                                schoolLevel = (ItemClass.Level)typeof(ItemClass).GetField("m_level").GetValue(component.m_info.m_class);
+                                if (schoolLevel == ItemClass.Level.Level1)
+                                    typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.ElementarySchoolCapacity);
+                                else if (schoolLevel == ItemClass.Level.Level2)
+                                    typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.HighSchoolCapacity);
+                                else
+                                    typeof(SchoolAI).GetField("m_studentCount").SetValue(component, (int)XmlConfig.config.Schools.UniversityCapacity);
+                            }
+                            catch
+                            {
+                                Debug.PrintWarning("Could not set m_studentCount");
+                            }
                         }
                     }
                 }
