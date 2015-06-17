@@ -1,5 +1,7 @@
-﻿using EnhancedBuildingCapacity.Mod;
+﻿using ColossalFramework.IO;
+using EnhancedBuildingCapacity.Mod;
 using ICities;
+using System.IO;
 
 namespace EnhancedBuildingCapacity
 {
@@ -12,6 +14,7 @@ namespace EnhancedBuildingCapacity
                 XmlConfig.SafeLoad();
 
                 Debug.PrintMessage("Successfully loaded mod v" + Debug.GetVersion());
+                Debug.PrintMessage("The config file can be found at: " + Path.Combine(DataLocation.applicationBase, "EnhancedBuildingCapacityConfig.xml"));
 
                 Patch.PatchEveryBuildingAI();
             }
