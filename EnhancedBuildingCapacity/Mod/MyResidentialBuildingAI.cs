@@ -54,7 +54,7 @@ namespace EnhancedBuildingCapacity.Mod
                 }
             }
 
-            return Mathf.Max(100, width * length * num + r.Int32(100U)) / 100;
+            return (width * length * num + r.Int32(100U)) / 100;
         }
 
         public override void GetConsumptionRates(Randomizer r, int productionRate, out int electricityConsumption, out int waterConsumption, out int sewageAccumulation, out int garbageAccumulation, out int incomeAccumulation)
