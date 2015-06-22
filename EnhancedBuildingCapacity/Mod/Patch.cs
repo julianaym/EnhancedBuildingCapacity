@@ -25,15 +25,15 @@ namespace EnhancedBuildingCapacity.Mod
                         Type currentAiType = component.GetType();
                         Type newAiType = null;
 
-                        if (currentAiType == typeof(ResidentialBuildingAI) || currentAiType == typeof(MyResidentialBuildingAI))
+                        if (currentAiType == typeof(ResidentialBuildingAI))
                             newAiType = typeof(MyResidentialBuildingAI);
-                        else if (currentAiType == typeof(CommercialBuildingAI) || currentAiType == typeof(MyCommercialBuildingAI))
+                        else if (currentAiType == typeof(CommercialBuildingAI))
                             newAiType = typeof(MyCommercialBuildingAI);
-                        else if (currentAiType == typeof(IndustrialBuildingAI) || currentAiType == typeof(MyIndustrialBuildingAI))
+                        else if (currentAiType == typeof(IndustrialBuildingAI))
                             newAiType = typeof(MyIndustrialBuildingAI);
-                        else if (currentAiType == typeof(IndustrialExtractorAI) || currentAiType == typeof(MyIndustrialExtractorAI))
+                        else if (currentAiType == typeof(IndustrialExtractorAI))
                             newAiType = typeof(MyIndustrialExtractorAI);
-                        else if (currentAiType == typeof(OfficeBuildingAI) || currentAiType == typeof(MyOfficeBuildingAI))
+                        else if (currentAiType == typeof(OfficeBuildingAI))
                             newAiType = typeof(MyOfficeBuildingAI);
 
                         if (newAiType != null)

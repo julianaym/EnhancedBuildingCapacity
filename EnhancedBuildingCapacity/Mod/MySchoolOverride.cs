@@ -1,9 +1,4 @@
-﻿using ColossalFramework;
-using ColossalFramework.DataBinding;
-using ColossalFramework.Math;
-using ICities;
-using System;
-using UnityEngine;
+﻿using ICities;
 
 namespace EnhancedBuildingCapacity.Mod
 {
